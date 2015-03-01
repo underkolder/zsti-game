@@ -1,0 +1,35 @@
+
+bl.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+button_left.d
+  rotate: false
+  xy: 1, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_left.d
+  rotate: false
+  xy: 1, 1
+  size: 64, 64
+  split: 0, 0, 0, 0
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_left.u
+  rotate: false
+  xy: 67, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_left.u
+  rotate: false
+  xy: 67, 1
+  size: 64, 64
+  split: 0, 0, 0, 0
+  orig: 64, 64
+  offset: 0, 0
+  index: -1

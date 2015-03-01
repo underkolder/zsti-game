@@ -1,0 +1,125 @@
+
+buttons.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+button_left.d
+  rotate: false
+  xy: 1, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_left.d
+  rotate: false
+  xy: 1, 1
+  size: 64, 64
+  split: 0, 0, 0, 0
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_top.u
+  rotate: false
+  xy: 67, 1
+  size: 64, 64
+  split: 0, 0, 0, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_top.u
+  rotate: false
+  xy: 67, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_down.d
+  rotate: false
+  xy: 133, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_down.d
+  rotate: false
+  xy: 133, 1
+  size: 64, 64
+  split: 0, 64, 0, 0
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_left.u
+  rotate: false
+  xy: 199, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_left.u
+  rotate: false
+  xy: 199, 1
+  size: 64, 64
+  split: 0, 0, 0, 0
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_top.d
+  rotate: false
+  xy: 265, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_top.d
+  rotate: false
+  xy: 265, 1
+  size: 64, 64
+  split: 0, 0, 0, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_right.u
+  rotate: false
+  xy: 331, 1
+  size: 64, 64
+  split: 0, 0, 0, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_right.u
+  rotate: false
+  xy: 331, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_down.u
+  rotate: false
+  xy: 397, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_down.u
+  rotate: false
+  xy: 397, 1
+  size: 64, 64
+  split: 0, 64, 0, 0
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_right.d
+  rotate: false
+  xy: 463, 1
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+button_right.d
+  rotate: false
+  xy: 463, 1
+  size: 64, 64
+  split: 0, 0, 0, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1

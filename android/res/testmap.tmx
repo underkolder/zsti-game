@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="grass" tilewidth="32" tileheight="32">
+  <image source="../../../../Desktop/textures/grass1.jpg" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="walkable" value="0"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="2" name="gray" tilewidth="32" tileheight="32">
+  <properties>
+   <property name="walkable" value="1"/>
+  </properties>
+  <image source="../../../../Desktop/textures/grass2.jpg" width="32" height="32"/>
+  <terraintypes>
+   <terrain name="gray" tile="-1"/>
+  </terraintypes>
+  <tile id="0">
+   <properties>
+    <property name="walkable" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt00sKgDAUA8Dq/Q/tVoqCra9fZjGgICSaeqSUDgCAmzOzW96KfZ6ud8nr2SfftmbrvE/rc9I7r2ef0j1KnivNrHn/iHM5us+f7x61x9/+0XuM7BO1R+12EftH69Wn9sw8dXu7byHPa5m1Wh97zNWn5b/3NXOGPWbpM2IPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAFV0xRifl
+  </data>
+ </layer>
+</map>
