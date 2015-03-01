@@ -43,7 +43,7 @@ public class ZstiGame implements ApplicationListener, InputProcessor {
     TiledMap tiledMap;
     TiledMapRenderer tiledMapRenderer;
     BitmapFont font;
-    String title = "ZSTI GAME";
+    String title = "ZSTI GAME x";
 
    // private Viewport viewport;
     private OrthographicCamera camera;
