@@ -1,6 +1,5 @@
 package pl.gamedev.zsti;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.Map;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
@@ -31,7 +30,7 @@ public class MapBodyBuilder {
         ppt = pixels;
         MapObjects objects = map.getLayers().get("obstacles").getObjects();
 
-        Array<Body> bodies = new Array<Body>();
+        Array<Body> bodies = new Array<>();
 
         for(MapObject object : objects) {
 
@@ -43,7 +42,7 @@ public class MapBodyBuilder {
 
             if (object instanceof RectangleMapObject) {
                 shape = getRectangle((RectangleMapObject)object);
-                Gdx.app.log("AAAAAAAAAAAA", "MAM GO!!!!!!!");
+                //Gdx.app.log("AAAAAAAAAAAA", "MAM GO!!!!!!!");
 
             }
             else if (object instanceof PolygonMapObject) {

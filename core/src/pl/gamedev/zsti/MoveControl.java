@@ -1,15 +1,11 @@
 package pl.gamedev.zsti;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Timer;
 
@@ -90,15 +86,14 @@ public class MoveControl {
             public void run() {
                 float x = controlledObject.getSprite().getX();
                 float y = controlledObject.getSprite().getY();
-                float a = controlledObject.getBody().getAngle();
                 float cx = x+controlledObject.getSprite().getWidth();
-                float cy = y+controlledObject.getSprite().getHeight();
                 //controlledObject.getBody().setTransform(x-10, y, a);
                 if (btnLeft.isPressed() && (int)((x-10))>=0) {
                     //if (collisionLayer.getCell((int)((x-10)/32), (int)(y/32)).getTile().getProperties().get("walkable", "daa", String.class).compareTo("1") == 0)
                     //controlledObject.setTransform(x - 10, y, 10);
                 //    controlledObject.getBody().applyForceToCenter(0f,100f,true);
                     controlledObject.getBody().setLinearVelocity(-200f, controlledObject.getBody().getLinearVelocity().y);
+
                 }
                 if (btnRight.isPressed() && (int)((cx+10)/32)<=collisionLayer.getWidth()) {
                    // if (collisionLayer.getCell((int)((cx+10)/32), (int)(y/32)).getTile().getProperties().get("walkable", "daa", String.class).compareTo("1") == 0)
@@ -113,7 +108,7 @@ public class MoveControl {
                         controlledObject.getBody().setLinearVelocity(controlledObject.getBody().getLinearVelocity().x, -200f);
                 }
             }
-        }, 0, 0.1f);
+        }, 0, 0.03f);
 
     }
     public Stage getStage(){

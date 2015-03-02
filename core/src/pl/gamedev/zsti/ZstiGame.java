@@ -14,7 +14,6 @@ import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
@@ -30,7 +29,6 @@ public class ZstiGame implements ApplicationListener, InputProcessor {
     MoveControl moveController;
 
     Box2DDebugRenderer debugRenderer;
-    Matrix4 debugMatrix;
 
 
     TiledMap tiledMap;
@@ -57,8 +55,8 @@ public class ZstiGame implements ApplicationListener, InputProcessor {
 
         MapBodyBuilder.buildShapes(tiledMap, 1, world);
 
-        mc = new OwnCharacter(world, Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, new Texture("hipek.png"));
-        mc2 = new OwnCharacter(world, Gdx.graphics.getWidth()/2-100, Gdx.graphics.getHeight()/2, new Texture("hipek.png"));
+        mc = new OwnCharacter(/*tiledMap, */world, Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2, new Texture("hipek.png"));
+        mc2 = new OwnCharacter(/*tiledMap, */world, Gdx.graphics.getWidth()/2-100, Gdx.graphics.getHeight()/2, new Texture("hipek.png"));
         moveController = new MoveControl();
         moveController.setTo(mc);
         moveController.setCollisionLayer((TiledMapTileLayer) tiledMap.getLayers().get("layer1"));
@@ -77,8 +75,17 @@ public class ZstiGame implements ApplicationListener, InputProcessor {
                 if(currentFrame % 2 == 1) font.setColor(Color.YELLOW);
                 else font.setColor(Color.CYAN);
                 title = Float.toString(mc.getSprite().getX())+" "+Float.toString(mc.getSprite().getY());
+
             }
         }, 0, 0.2f);
+        Timer.schedule(new Timer.Task(){
+            @Override
+            public void run() {
+                world.step(Gdx.graphics.getDeltaTime(), 6, 2);
+
+            }
+        }, 0, 0.03f);
+
 
         debugRenderer = new Box2DDebugRenderer();
 
@@ -129,9 +136,7 @@ public class ZstiGame implements ApplicationListener, InputProcessor {
         font.draw(playerInfo, title, 10, Gdx.graphics.getHeight());
         playerInfo.end();
 
-        debugMatrix = batch.getProjectionMatrix().cpy().scale(1f,
-                1f, 0);
-        debugRenderer.render(world, debugMatrix);
+        debugRenderer.render(world, camera.combined);
 
     }
 
