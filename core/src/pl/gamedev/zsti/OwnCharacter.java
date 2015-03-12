@@ -1,23 +1,49 @@
 package pl.gamedev.zsti;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Timer;
 
 public class OwnCharacter {
     Sprite sprite;
     Body body;
     Fixture fixture;
+//animation
+    private TextureAtlas textureAtlas;
+    int animMc;
 
+//animation
 
     OwnCharacter(/*TiledMap map, */World world, float x, float y, Texture texture){
-       // texture = new Texture("hipek.png");
-        sprite = new Sprite(texture);
+       // sprite = new Sprite(texture);
+
+        textureAtlas = new TextureAtlas(Gdx.files.internal("a_mc/a_mc.atlas"));
+        TextureAtlas.AtlasRegion region = textureAtlas.findRegion("a_mc1");
+        sprite = new Sprite(region);
+
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                animMc++;
+                if(animMc==48) animMc=0;
+                String currentAtlasKey = "a_mc1";
+                if(animMc%12>=8) currentAtlasKey= "a_mc3";
+                else if(animMc%12>=4) currentAtlasKey= "a_mc2";
+
+                sprite.setRegion(textureAtlas.findRegion(currentAtlasKey));
+
+            }
+        }, 0, 0.1f);
+
+
         sprite.setPosition(x, y);
 
         BodyDef bodyDef = new BodyDef();
@@ -50,11 +76,11 @@ public class OwnCharacter {
         fixture = body.createFixture(fixtureDef);
         shape.dispose();
     }
-
+/*
     public Fixture getFixture() {
         return fixture;
     }
-
+*/
     public Sprite getSprite() {
         return sprite;
     }
@@ -70,6 +96,8 @@ public class OwnCharacter {
     public float getWidth(){
         return sprite.getWidth();
     }
+
+//    public TextureAtlas getTextureAtlas(){ return textureAtlas; }
 
 /*
     private static PolygonShape getPolygon(PolygonMapObject polygonObject) {
