@@ -136,7 +136,7 @@ public class ZstiGame implements ApplicationListener, InputProcessor {
         font.draw(playerInfo, title, 10, Gdx.graphics.getHeight());
         playerInfo.end();
 
-        debugRenderer.render(world, camera.combined);
+       // debugRenderer.render(world, camera.combined);
 
     }
 
